@@ -1,4 +1,3 @@
-# src/model.py
 import logging
 from pathlib import Path
 from typing import Any, Tuple

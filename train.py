@@ -1,10 +1,9 @@
 import logging
 from pathlib import Path
 from sklearn.model_selection import train_test_split
-from data_loader import load_data
-from preprocess import clean_text_preprocessing, fit_vectorizer, transform_vectorizer
-from model import train_model, save_model
-from evaluate import evaluate_and_report
+from src.data import load_data, clean_text_preprocessing, fit_vectorizer, transform_vectorizer
+from src.model import train_model, save_model
+from src.evaluate import evaluate_and_report
 
 # === Константы проекта ===
 DATA_LOCAL_PATH = Path("data/fake_news.csv")
