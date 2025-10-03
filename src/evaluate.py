@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 log = logging.getLogger(__name__)
 
-DOCS_DIR = Path("docs")
+DOCS_DIR = Path("results")
 DOCS_DIR.mkdir(parents=True, exist_ok=True)
 CONF_MATRIX_PATH = DOCS_DIR / "confusion_matrix.png"
 

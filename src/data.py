@@ -18,8 +18,8 @@ TFIDF_LANGUAGE = "english"
 TFIDF_NGRAM_RANGE = (1, 2)
 
 def load_data(
-        path_or_url: Optional[str] = None, 
-        save_to: Optional[str] = "data/fake_news.csv"
+        path_or_url: Optional[str] = DEFAULT_URL, 
+        save_to: Optional[str] = DEFAULT_LOCAL_PATH
 ) -> pd.DataFrame:
     """
     Загружает CSV с локального пути или по URL.
@@ -28,10 +28,9 @@ def load_data(
     - Проверяет обязательные колонки ['text', 'label'].
     """
     try:
-        src = path_or_url or DEFAULT_URL
-        log.info("Loading dataset from %s", src)
+        log.info("Loading dataset from %s", path_or_url)
 
-        df = pd.read_csv(src)
+        df = pd.read_csv(path_or_url)
 
         # проверка обязательных колонок
         expected = {"text", "label"}
